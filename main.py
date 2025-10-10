@@ -18,9 +18,10 @@ def findImage(path):
     my = cv2.minMaxLoc(result)[3][1]
     return mx, my, cv2.minMaxLoc(result)[0]
 
-openchrome = findImage(r"C:\Users\greys\OneDrive\Desktop\code\pyautoguiTest\chrome.png")
+openchrome = findImage(r"C:\Users\greys\OneDrive\Documents\CODING\pyautoguiTest\chrome.png")
 pyautogui.moveTo(openchrome[0], openchrome[1])
 pyautogui.click()
+time.sleep(0.5)
 pyautogui.moveTo(openchrome[0], openchrome[1]-75)
 pyautogui.click()
 print("chrome should be open")
@@ -35,15 +36,15 @@ time.sleep(1)
 
 waiting = True
 while waiting:
-    searchbar = findImage(r"C:\Users\greys\OneDrive\Desktop\code\pyautoguiTest\ytsearch.png")
+    searchbar = findImage(r"C:\Users\greys\OneDrive\Documents\CODING\pyautoguiTest\ytsearch.png")
     pyautogui.moveTo(searchbar[0], searchbar[1])
     if searchbar[1] < h/2:
         waiting = False
     time.sleep(0.5)
 print("youtube loaded")
 
-time.sleep(2)
-searchbar = findImage(r"C:\Users\greys\OneDrive\Desktop\code\pyautoguiTest\ytsearch.png")
+time.sleep(3)
+searchbar = findImage(r"C:\Users\greys\OneDrive\Documents\CODING\pyautoguiTest\ytsearch.png")
 
 pyautogui.moveTo(searchbar[0]+100, searchbar[1]+30)
 pyautogui.click()
@@ -58,7 +59,7 @@ pyautogui.moveTo(w-10, searchbar[1]+30)
 waiting = True
 while waiting:
     pyautogui.scroll(-500)
-    live = findImage(r"C:\Users\greys\OneDrive\Desktop\code\pyautoguiTest\live.png")
+    live = findImage(r"C:\Users\greys\OneDrive\Documents\CODING\pyautoguiTest\live.png")
     if live[0] > 800 and live[1] > 300:
         pyautogui.moveTo(live[0]-100, live[1])
         waiting = False
